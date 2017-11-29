@@ -48,7 +48,7 @@ public class TestRedis {
     @Test
     public void testString() {
         //-----添加数据----------  
-        jedis.set("name","xinxin");//向key-->name中放入了value-->xinxin  
+        jedis.set("name","xinxin");//向key-->name中放入了value-->xinxin  //map结构
         System.out.println(jedis.get("name"));//执行结果：xinxin  
         
         jedis.append("name", " is my lover"); //拼接
@@ -73,7 +73,7 @@ public class TestRedis {
         map.put("name", "spark");
         map.put("age", "4");
         map.put("qq", "123456");
-        jedis.hmset("user",map);
+        jedis.hmset("user",map);  //复杂数据类型
         //取出user中的name，执行结果:[minxr]-->注意结果是一个泛型的List  
         //第一个参数是存入redis中map对象的key，后面跟的是放入map中的对象的key，后面的key可以跟多个，是可变参数  
         List<String> rsmap = jedis.hmget("user", "name", "age", "qq");
@@ -137,7 +137,7 @@ public class TestRedis {
         System.out.println("返回集合的元素个数		"+jedis.scard("data"));//返回集合的元素个数  
     }  
   
-    @Test  
+    @Test  //排序测试
     public void testSort() throws InterruptedException {  
         //jedis 排序  
         //注意，此处的rpush和lpush是List的操作。是一个双向链表（但从表现来看的）  
