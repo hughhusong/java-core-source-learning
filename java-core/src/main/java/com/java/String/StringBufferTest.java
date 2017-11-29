@@ -6,7 +6,7 @@ public class StringBufferTest {
 		StringBuffer sb = new StringBuffer();
 		StringBuilder sbd = new StringBuilder();
 		/*
-		 * java中String、StringBuffer、StringBuilder的区别
+		 * java中String、StringBuffer、StringBuilder的区别 测试
 		 * 
 		 * 1.可变与不可变
 		 * 	
