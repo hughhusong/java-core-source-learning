@@ -34,7 +34,7 @@ public class RedisUtil {
     /**
      * 初始化Redis连接池
      */
-    static {
+    static {   //静态代码块  在类加载的时候只会执行一次
         try {
             JedisPoolConfig config = new JedisPoolConfig();
             config.setMaxIdle(MAX_ACTIVE);
@@ -51,7 +51,7 @@ public class RedisUtil {
      * 获取Jedis实例
      * @return
      */
-    public synchronized static Jedis getJedis() {
+    public synchronized static Jedis getJedis() {  //单利的设计模式 只有一份对象
         try {
             if (jedisPool != null) {
                 Jedis resource = jedisPool.getResource();
