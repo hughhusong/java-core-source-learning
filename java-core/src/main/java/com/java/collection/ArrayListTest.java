@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 
  * 1.概述 
  * 
- * ArrayList是List接口的可变数组的实现。
+ * ArrayList是List接口的可变数组的实现。--->可变 底层两种实现方式
  * 还提供了一些方法 操作内部用来存储列表的数组的大小。
  * 每个ArrayList实例都有一个容量，该容量是指用来存储列表元素的数组的大小。
  * 它总是至少等于列表的大小。
@@ -48,7 +48,7 @@ public class ArrayListTest {
 	//参数
 	
 	/**
-	 * 底层使用数组实现
+	 * 底层使用数组实现  查找块
 	 */
 	transient Object[] elementData; // non-private to simplify nested class access
 	
