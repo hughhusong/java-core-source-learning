@@ -10,7 +10,7 @@ public class StringBufferTest {
 		 * 
 		 * 1.可变与不可变
 		 * 	
-		 * 	String不可变。
+		 * 	String不可变。  //字符串  属于引用的类型 在占内存中是字符数组实现的(底层)
 		 * 		private final char value[];
 		 * 	另外的可变。
 		 * 		char[] value;
@@ -22,19 +22,19 @@ public class StringBufferTest {
 		 * 	B.StringBuffer：A thread-safe, mutable sequence of characters.
 		 * 		
 		 * 		@Override
-    			public synchronized StringBuffer append(String str) {
+    			public synchronized StringBuffer append(String str) { //线程安全，可变
         			toStringCache = null;
         			super.append(str);
         			return this;
     			}
-		 * 	C.StringBuilder:在单线程性能表现比较好。线程不安全。
+		 * 	C.StringBuilder:在单线程性能表现比较好。线程不安全。  //没有同步
 		 *  	
 		 *  	 @Override
     			public StringBuilder append(String str) {
         			super.append(str);
         			return this;
     			}
-		 * 		HashMap线程不安全。HashTable线程安全。
+		 * 		HashMap线程不安全。HashTable线程安全。 //vector 向量在c++中，java中也增加了
 		 * 
 		 * 
 		 * 
@@ -45,7 +45,7 @@ public class StringBufferTest {
 		calSize();
 	}
 	
-	   private static void calSize() {    
+	   private static void calSize() { //基础数据类型，4类8中  在占内存中
 	        System.out.println("Integer: " + Integer.SIZE/8);           // 4    
 	        System.out.println("Short: " + Short.SIZE/8);               // 2        
 	        System.out.println("Long: " + Long.SIZE/8);                 // 8    
